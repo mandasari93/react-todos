@@ -27,13 +27,20 @@ class App extends Component {
   removeTodo(id) {
     console.log("Removing: ", id);
   }
-  
+
   render() {
     return (
       <div className="App">
         <div className="todo-wrapper">
           <Header /> 
           <TodoInput todoText="" addTodo={this.addTodo} />
+          <ul>
+            {
+              this.state.todos.map((todo) => {
+                return <TodoItem todo={todo} key={todo.id} id={todo.id} reoveTodo={this.removeTodo}/>
+              })
+            }
+          </ul>
         </div>
       </div>
     );
