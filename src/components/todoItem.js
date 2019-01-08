@@ -6,7 +6,7 @@ class TodoItem extends Component {
         super(props);
     }
 
-    removeTodo(id) {
+    removeTodo = (id) => {
         this.props.removeTodo(id);
     }
 
