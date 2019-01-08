@@ -31,7 +31,9 @@ class App extends Component {
   }
 
   removeTodo(id) {
-    console.log("Removing: ", id);
+    this.setState({
+      todos: this.state.todos.filter((todo, index) => todo.id !== id)
+    })
   }
 
   render() {
